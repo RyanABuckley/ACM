@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
-    class Product
+    public class Product
     {
         public Product()
         {
@@ -21,15 +21,6 @@ namespace ACM.BL
         public string ProductDescription { get; set; }
         public int ProductID { get; private set; }
         public string ProductName { get; set; }
-
-        public Product Retreive(int productID)
-        {
-            return new Product();
-        }
-        public bool Save()
-        {
-            return true;
-        }
 
         public bool Validate()
         {

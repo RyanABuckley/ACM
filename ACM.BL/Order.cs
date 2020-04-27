@@ -6,27 +6,22 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
-    class Order
+    public class Order
     {
-        public Order()
+        public Order(): this(0)
         {
 
         }
         public Order(int orderID)
         {
             OrderID = orderID;
+            OrderItems = new List<OrderItem>();
         }
+        public int CustomerID { get; set; }
         public int OrderID { get; private set; }
         public DateTimeOffset? OrderDate { get; set; }
-
-        public Order Retreive(int orderID)
-        {
-            return new Order();
-        }
-        public bool Save()
-        {
-            return true;
-        }
+        public List<OrderItem> OrderItems { get; set; }
+        public int ShippingAddressID { get; set; }
         public bool Validate()
         {
             var isValid = true;
