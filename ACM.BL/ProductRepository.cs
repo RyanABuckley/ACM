@@ -18,13 +18,35 @@ namespace ACM.BL
                 product.ProductDescription = "They're kinda yellow!";
                 product.CurrentPrice = 15.96M;
             }
+            object myObject = new Object();
+            Console.WriteLine($"Object: {myObject.ToString()}");
+            Console.WriteLine($"Product: {product.ToString()}");
 
             return product;
         }
 
-        public bool Save()
+        public bool Save(Product product)
         {
-            return true;
+            var success = true;
+            if (product.HasChanges)
+            {
+                if (product.IsValid)
+                {
+                    if (product.IsNew)
+                    {
+                        //save
+                    }
+                    else
+                    {
+                        //update
+                    }
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            return success;
         }
 
     }

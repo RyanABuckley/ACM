@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
-    public class Customer
+    public class Customer : EntityBase
     {
         public Customer(): this(0)
         {
@@ -51,8 +51,9 @@ namespace ACM.BL
             get { return _lastName; }
             set { _lastName = value; }
         }
+        public override string ToString() => FullName;
 
-        public bool Validate()
+        public override bool Validate()
         {
             var isValid = true;
 
